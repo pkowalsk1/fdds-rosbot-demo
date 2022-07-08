@@ -5,7 +5,11 @@
    ```bash
     git clone https://github.com/pkowalsk1/fdds-rosbot-demo.git
    ```
-   Complete the `dds-config.xml` file with `ipv6` addresses (you can use i.e. `ifconfig` command to get ip addresses). 
+   Complete the `dds-config.xml` file with `ipv4` addresses (you can use i.e. `ifconfig` command to get ip addresses). 
+
+    > Tip:
+    >
+    > You can also use UDPv6 transport with ipv6. See [exapmle](https://fast-dds.docs.eprosima.com/en/latest/fastdds/xml_configuration/example.html) from Eprosima.
 
 2. On your laptop and ROSbot execute:
 
@@ -34,7 +38,7 @@ export FASTRTPS_DEFAULT_PROFILES_FILE=${PWD}/dds-config.xml    # Set DDS config 
 
 ## Use ROSbot with FastDDS Discovery Server 
 
-1. Complete the `dds-config-discovery-server.xml` and `dds-config-discovery-client.xml` files with `ipv6` addresses. On your laptop and ROSbot execute:
+1. Complete the `dds-config-discovery-server.xml` and `dds-config-discovery-client.xml` files with `ipv4` addresses. On your laptop and ROSbot execute:
 
 ```bash
 export ROS_DOMAIN_ID=20
@@ -63,3 +67,5 @@ export RMW_IMPLEMENTATION=rmw_fastrtps_cpp                     # Set RMW impleme
     source /opt/ros/${ROS_DISTRO}/setup.bash
     ros2 run demo_nodes_cpp talker
     ```
+
+For more exampels visit https://fast-dds.docs.eprosima.com/en/latest/fastdds/use_cases/wifi/wifi.html
